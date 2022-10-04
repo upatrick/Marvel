@@ -3,14 +3,41 @@
     height: 100vh;
     display: flex;
     justify-content: space-between;
-    background-image: url(/images/escudo.jpg);
-    background-size: 100%;
+    background-color: black;
+    /* background-image: url(/images/escudo.jpg); */
 }
+
+.rotate {
+    position: absolute;
+    right: 23%;
+    animation: rotate 4s ;
+    z-index: 1;
+}
+
+.characters {
+    z-index: 2;
+}
+
 
 * {
     margin: 0;
 }
 
+
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+img {
+    height: 100vh;
+}
 .capitao {
     height: 100vh;
 }
@@ -19,6 +46,14 @@
     height: 100vh;
 }
 
-img {
-    height: 100vh;
+.text {
+    position: absolute;
+    z-index: 3;
+    width: 200px;
+    right: 45%;
+    bottom: 10%;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 400;
+    font-style: oblique;
 }
