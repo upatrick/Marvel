@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Carter+One&display=swap");
+
 .container {
     width: 100%;
     height: 100vh;
@@ -7,11 +9,56 @@
     /* background-image: url(/images/escudo.jpg); */
 }
 
+.face_capitao {
+    position: absolute;
+    z-index: 3;
+    width: 50%;
+    animation: left 2s ease-in-out forwards;
+    animation-delay: 2s;
+}
+
+@keyframes left {
+    from {
+        left: 0;
+    }
+    to {
+        left: -50%;
+        opacity: 0;
+    }
+
+}
+
+
+
+.face_ferro {
+    position: absolute;
+    z-index: 3;
+    width: 50%;
+    right: 0;
+    animation: right 2s ease-in-out forwards;
+    animation-delay: 2s;
+}
+
+@keyframes right {
+    from {
+        right: 0;
+    }
+    to {
+        right: -50%;
+        opacity: 0;
+
+    }
+
+}
+
+ 
+
 .rotate {
     position: absolute;
     right: 23%;
     animation: rotate 4s ;
     z-index: 1;
+    animation-delay: 3s;
 }
 
 .characters {
@@ -31,6 +78,19 @@
     z-index: 2;
     width: 100%;
     height: 300px;
+    animation-name: pulse;
+    animation: pulse 2s infinite;
+    animation-direction: alternate;
+    animation-name: pulse;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
 }
 
 * {
@@ -64,11 +124,39 @@ img {
 .text {
     position: absolute;
     z-index: 3;
-    width: 200px;
-    right: 45%;
+    width: 500px;
+    right: 30%;
     bottom: 10%;
     color: #fff;
-    font-family: 'Poppins', sans-serif;
-    font-size: 400;
-    font-style: oblique;
+    font-family: 'Carter One', cursive;
+    font-size: xx-large;
 }
+
+@keyframes brilho {
+    0% {
+      color: rgb(255, 255, 255);
+      text-shadow: 0 0 1px rgb(216, 216, 216), 0 0 5px rgb(232, 232, 232),
+        0 0 100px rgb(135, 87, 87);
+    }
+    20%,
+    90% {
+      color: rgb(157, 41, 41);
+    }
+  }
+
+  span {
+    animation: brilho 2s ease-in-out infinite;
+  }
+  
+  span:nth-of-type(2) {
+    animation-delay: 0.5s;
+  }
+  
+  span:nth-of-type(3) {
+    animation-delay: 1s;
+  }
+  
+  span:nth-of-type(4) {
+    animation-delay: 1.5s;
+  }
+  
